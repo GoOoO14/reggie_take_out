@@ -182,12 +182,6 @@ public class DishController {
             dishService.update(dish,queryWrapper);
         }
 
-//        Dish dish = dishService.getById(ids);
-//        dish.setStatus(0);
-//        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
-//        queryWrapper.in(Dish::getId, ids);
-//        queryWrapper.eq(Dish::getId, ids);
-//        dishService.update(dish,queryWrapper);
 
         return R.success("停售成功");
     }
@@ -208,11 +202,7 @@ public class DishController {
             queryWrapper.eq(Dish::getId,id);
             dishService.update(dish,queryWrapper);
         }
-//        Dish dish = dishService.getById(ids);
-//        dish.setStatus(1);
-//        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
-//        queryWrapper.eq(Dish::getId,ids);
-//        dishService.update(dish,queryWrapper);
+
 
         return R.success("起售成功");
     }
