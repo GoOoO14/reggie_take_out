@@ -103,7 +103,6 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
      * @param dishDto
      */
     @Override
-    @Transactional
     public void updateWithFlavor(DishDto dishDto) {
         // 更新 dish 表基本信息
         this.updateById(dishDto);
@@ -113,6 +112,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
         queryWrapper.eq(DishFlavor::getDishId,dishDto.getId());
 
         dishFlacorService.remove(queryWrapper);
+//        dishFlacorService.
 
 
         // 添加当前提交过来的口味数据 -- dish_flavor表的insert操作
@@ -124,6 +124,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
             item.setDishId(dishDto.getId());
             return item;
         }).collect(Collectors.toList());
+
 
         dishFlacorService.saveBatch(flavors);
     }
