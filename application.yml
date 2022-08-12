@@ -67,4 +67,4 @@ mybatis-plus:
       logic-not-delete-value: 0
 
 reggie:
-  path: /Users/mac/Documents/java/reggie2/reggie_take_out/img/
+  path: /usr/local/img
